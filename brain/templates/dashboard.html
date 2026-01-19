@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dream AI v2.0</title>
+    <style>
+        body { background: #000; color: #0f0; font-family: monospace; padding: 20px; }
+        .box { border: 1px solid #333; padding: 20px; margin-bottom: 20px; }
+        h1 { border-bottom: 1px solid #0f0; }
+    </style>
+</head>
+<body>
+    <h1>🧠 DREAM AI // ONLINE</h1>
+    <div class="box">
+        <h3>📜 Live Logs</h3>
+        <div id="logs">Connecting...</div>
+    </div>
+    <script>
+        setInterval(() => {
+            fetch('/brain-log').then(r => r.text()).then(d => document.getElementById('logs').innerText = d);
+        }, 1000);
+    </script>
+</body>
+</html>
